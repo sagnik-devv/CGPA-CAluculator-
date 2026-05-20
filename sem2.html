@@ -18,7 +18,7 @@
     <header class="lpu-header">
         <div class="header-container">
             <div class="logo-area">
-                <a href="index.html">
+                <a href="index.html" class="back-home-link">
                     <img src="logo.png" alt="Logo" class="main-logo">
                 </a>
                 <div class="title-area">
@@ -47,7 +47,7 @@
     <main class="dashboard-container">
         
         <div style="margin-bottom: 1.5rem;">
-            <a href="index.html" class="btn btn-outline" style="width: fit-content; text-decoration: none;"><i class="fas fa-arrow-left"></i> Back to Semesters</a>
+            <a href="index.html" class="btn btn-outline back-home-link" style="width: fit-content; text-decoration: none;"><i class="fas fa-arrow-left"></i> Back to Semesters</a>
         </div>
         
         <!-- Controls & Cycle Toggle -->
@@ -156,6 +156,14 @@
     <footer>
         <p>&copy; <span id="current-year"></span> LPU Semester CGPA Calculator. Designed with <i class="fas fa-heart"></i> for students.</p>
     </footer>
+
+    <!-- Page Loader Overlay -->
+    <div id="page-loader" class="page-loader hidden">
+        <div class="loader-content">
+            <div class="spinner"></div>
+            <h2 class="loader-text">Loading Dashboard...</h2>
+        </div>
+    </div>
 
     <!-- jsPDF CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>

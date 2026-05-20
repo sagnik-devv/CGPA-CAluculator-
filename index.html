@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css?v=4">
+    <link rel="stylesheet" href="style.css?v=5">
 </head>
 <body class="light-mode">
     
@@ -50,7 +50,7 @@
                 <h3>1st Semester</h3>
                 <span class="badge">Coming Soon</span>
             </div>
-            <a href="sem2.html" class="sem-card active-sem">
+            <a href="sem2.html" id="sem2-link" class="sem-card active-sem">
                 <h3>2nd Semester</h3>
                 <span class="badge success">Available</span>
                 <i class="fas fa-arrow-right"></i>
@@ -114,6 +114,14 @@
     <footer>
         <p>&copy; <span id="current-year"></span> LPU Semester CGPA Calculator. Designed with <i class="fas fa-heart"></i> for students.</p>
     </footer>
+
+    <!-- Page Loader Overlay -->
+    <div id="page-loader" class="page-loader hidden">
+        <div class="loader-content">
+            <div class="spinner"></div>
+            <h2 class="loader-text">Initializing Calculator...</h2>
+        </div>
+    </div>
 
     <script src="home.js"></script>
 </body>

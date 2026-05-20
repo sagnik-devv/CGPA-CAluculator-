@@ -865,6 +865,23 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    // BACK TO HOME LOADING LOGIC
+    const backHomeLinks = document.querySelectorAll(".back-home-link");
+    const pageLoader = document.getElementById("page-loader");
+
+    if (backHomeLinks.length > 0 && pageLoader) {
+        backHomeLinks.forEach(link => {
+            link.addEventListener("click", (e) => {
+                e.preventDefault();
+                pageLoader.classList.remove("hidden");
+                
+                setTimeout(() => {
+                    window.location.href = link.href;
+                }, 1000);
+            });
+        });
+    }
+
     // RUN
 
     init();
