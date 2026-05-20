@@ -99,8 +99,8 @@ document.addEventListener("DOMContentLoaded", () => {
         },
 
         {
-            code: "PEL121",
-            name: "Communication Skills-I",
+            code: "PEL",
+            name: "Communication Skills",
             credits: 3,
             components: [
                 { name: "Attendance", max: 15, id: "att" },
