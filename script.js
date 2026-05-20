@@ -220,6 +220,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // INIT
 
     function init() {
+        if (!cycleToggle) return;
 
         const savedCycle =
             localStorage.getItem("selected_cycle") || "physics";
@@ -231,10 +232,12 @@ document.addEventListener("DOMContentLoaded", () => {
         updateCycleSelection();
     }
 
-    cycleToggle.addEventListener(
-        "change",
-        updateCycleSelection
-    );
+    if (cycleToggle) {
+        cycleToggle.addEventListener(
+            "change",
+            updateCycleSelection
+        );
+    }
 
     function updateCycleSelection() {
 
@@ -523,9 +526,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // RESET
 
-    document
-        .getElementById("reset-btn")
-        .addEventListener("click", () => {
+    const resetBtn = document.getElementById("reset-btn");
+    if (resetBtn) {
+        resetBtn.addEventListener("click", () => {
 
             savedData = {};
 
@@ -539,12 +542,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
             calculateAll();
         });
+    }
 
     // PDF EXPORT
 
-    document
-        .getElementById("export-pdf-btn")
-        .addEventListener("click", () => {
+    const exportPdfBtn = document.getElementById("export-pdf-btn");
+    if (exportPdfBtn) {
+        exportPdfBtn.addEventListener("click", () => {
 
             const { jsPDF } = window.jspdf;
 
@@ -859,6 +863,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 btn.disabled = false;
             }
         });
+    }
 
     // RUN
 

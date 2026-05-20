@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LPU Semester CGPA Calculator</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css?v=4">
+</head>
+<body class="light-mode">
+    
+    <header class="lpu-header">
+        <div class="header-container">
+            <div class="logo-area">
+                <a href="index.html">
+                    <img src="logo.png" alt="Logo" class="main-logo">
+                </a>
+                <div class="title-area">
+                    <h1>CGPA Calculator</h1>
+                    <p>Made by Sagnik Chakraborty</p>
+                </div>
+            </div>
+            <div class="header-actions">
+                <button id="theme-toggle" aria-label="Toggle Dark Mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">Academic Dashboard</span>
+            <h2>2nd Semester CGPA Calculator</h2>
+            <p>Easily track your marks, estimate your SGPA with real-time analytics.</p>
+        </div>
+    </section>
+
+    
+    <main class="dashboard-container">
+        
+        <div style="margin-bottom: 1.5rem;">
+            <a href="index.html" class="btn btn-outline" style="width: fit-content; text-decoration: none;"><i class="fas fa-arrow-left"></i> Back to Semesters</a>
+        </div>
+        
+        <!-- Controls & Cycle Toggle -->
+        <div class="controls-section">
+            <div class="cycle-toggle-wrapper">
+                <span class="toggle-label" id="label-physics">MEC Cycle</span>
+                <label class="switch">
+                    <input type="checkbox" id="cycle-toggle">
+                    <span class="slider round"></span>
+                </label>
+                <span class="toggle-label" id="label-mechanical">ECE Cycle</span>
+            </div>
+            
+            <div class="action-buttons">
+                <button id="reset-btn" class="btn btn-outline"><i class="fas fa-undo"></i> Reset</button>
+                <button id="export-pdf-btn" class="btn btn-primary"><i class="fas fa-file-pdf"></i> Export PDF</button>
+            </div>
+        </div>
+
+        <!-- Layout Wrapper -->
+        <div class="dashboard-layout" id="dashboard-layout">
+            
+            <!-- Subject Cards Grid -->
+            <div class="subjects-column" id="subjects-container">
+                <!-- Dynamically populated via JS -->
+            </div>
+
+            <!-- Summary Sidebar -->
+            <div class="summary-column">
+                <div class="summary-card sticky" id="summary-card">
+                    <h3><i class="fas fa-chart-pie"></i> Academic Summary</h3>
+                    
+                    <div class="summary-stats">
+                        <div class="stat-box">
+                            <span class="stat-value" id="total-credits">0</span>
+                            <span class="stat-label">Total Credits</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-value" id="total-marks">0</span>
+                            <span class="stat-label">Marks Earned</span>
+                        </div>
+                    </div>
+
+                    <div class="gpa-display">
+                        <div class="gpa-circle">
+                            <svg viewBox="0 0 36 36" class="circular-chart">
+                                <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                <path class="circle" id="sgpa-circle" stroke-dasharray="0, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                            </svg>
+                            <div class="gpa-text">
+                                <span class="gpa-number" id="sgpa-value">0.00</span>
+                                <span class="gpa-label">SGPA</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="estimated-cgpa">
+                        <h4>Estimated CGPA</h4>
+                        <div class="cgpa-bar-wrapper">
+                            <div class="cgpa-bar" id="cgpa-bar" style="width: 0%"></div>
+                        </div>
+                        <p class="cgpa-val"><strong id="cgpa-value">0.00</strong> / 10.0</p>
+                    </div>
+
+                    <div class="grade-distribution">
+                        <h4>Grade Distribution</h4>
+                        <ul id="grade-list">
+                            <!-- Dynamically populated -->
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- CodeBhumi Promo Section -->
+    <section class="cb-section">
+        <div class="cb-header">
+            <h2>Join <span class="cb-highlight">CodeBhumi</span></h2>
+            <p>Empowering students through real-world projects and technical initiatives.</p>
+        </div>
+        <div class="cb-cards-grid">
+            <div class="cb-card">
+                <i class="fas fa-code cb-icon"></i>
+                <h3>Project Development</h3>
+                <p>Build real-world applications, master modern tech stacks, and participate in competitive hackathons.</p>
+            </div>
+            <div class="cb-card">
+                <i class="fas fa-user-tie cb-icon"></i>
+                <h3>Industry Readiness</h3>
+                <p>Prepare for the corporate world through resume building, open-source contributions, and mock interviews.</p>
+            </div>
+            <div class="cb-card highlighted-card">
+                <i class="fas fa-users cb-icon"></i>
+                <h3>Community Network</h3>
+                <p>Foster a peer-to-peer network of engineers to collaborate, learn, innovate, and grow together.</p>
+            </div>
+        </div>
+        <div class="cb-action">
+            <a href="https://codebhumiscc.netlify.app/" target="_blank" class="btn btn-cb">Apply Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; <span id="current-year"></span> LPU Semester CGPA Calculator. Designed with <i class="fas fa-heart"></i> for students.</p>
+    </footer>
+
+    <!-- jsPDF CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="script.js?v=6"></script>
+</body>
+</html>
