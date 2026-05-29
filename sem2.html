@@ -17,13 +17,16 @@
     
     <header class="lpu-header">
         <div class="header-container">
-            <div class="logo-area">
-                <a href="index.html" class="back-home-link">
-                    <img src="logo.png" alt="Logo" class="main-logo">
-                </a>
-                <div class="title-area">
-                    <h1>CGPA Calculator</h1>
-                    <p>Made by Sagnik Chakraborty</p>
+            <div style="display: flex; align-items: center;">
+                <a href="index.html" class="mobile-actions" style="margin-right: 16px; font-size: 20px; color: var(--color-almost-black); text-decoration: none;"><i class="fas fa-arrow-left"></i></a>
+                <div class="logo-area">
+                    <a href="index.html" class="back-home-link">
+                        <img src="logo.png" alt="Logo" class="main-logo">
+                    </a>
+                    <div class="title-area">
+                        <h1>CGPA Calculator</h1>
+                        <p>Made by Sagnik Chakraborty</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -165,7 +168,10 @@
 
     <!-- Mobile Bottom Nav -->
     <nav class="mobile-bottom-nav">
-        <a href="index.html" class="btn btn-outline"><i class="fas fa-arrow-left"></i> Back</a>
+        <div class="mobile-sgpa-display">
+            <span class="mobile-sgpa-label">SGPA</span>
+            <span class="mobile-sgpa-value" id="mobile-sgpa-val">0.00</span>
+        </div>
         <button id="reset-btn-mobile" class="btn btn-outline" onclick="document.getElementById('reset-btn').click()"><i class="fas fa-undo"></i> Reset</button>
         <button id="export-pdf-btn-mobile" class="btn btn-primary" onclick="document.getElementById('export-pdf-btn').click()"><i class="fas fa-file-pdf"></i> Export</button>
     </nav>

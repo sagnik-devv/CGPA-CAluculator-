@@ -460,6 +460,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
         elCgpaValue.textContent = sgpa;
 
+        const elMobileSgpaVal = document.getElementById("mobile-sgpa-val");
+        if (elMobileSgpaVal) {
+            elMobileSgpaVal.textContent = sgpa;
+        }
+
         elCgpaBar.style.width =
             `${(sgpa / 10) * 100}%`;
 

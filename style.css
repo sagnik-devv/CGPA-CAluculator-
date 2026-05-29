@@ -399,6 +399,33 @@ input:checked + .slider:before {
     gap: 8px;
 }
 
+.mobile-sgpa-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-duo-green-light);
+    color: var(--color-duo-green);
+    border-radius: 12px;
+    padding: 6px 16px;
+    min-height: 48px;
+    flex: 1;
+}
+
+.mobile-sgpa-label {
+    font-size: 10px;
+    font-weight: var(--font-weight-bold);
+    text-transform: uppercase;
+    line-height: 1;
+    margin-bottom: 2px;
+}
+
+.mobile-sgpa-value {
+    font-family: var(--font-feather);
+    font-size: 20px;
+    line-height: 1;
+}
+
 .mobile-bottom-nav .btn {
     flex: 1;
     padding: 12px 8px;
